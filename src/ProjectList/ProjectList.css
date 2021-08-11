@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+.ProjectList {
+  margin: 20px;
+}
+
+.ProjectList h2 {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.ProjectList ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+.ProjectList li {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.ProjectList .line-large {
+  border-style: solid;
+  border-width: 1px;
+  width: 150px;
+  margin: 20px;
+}
+
+.ProjectList .blue {
+  color: #4a90e2;
+}
+
+.ProjectList a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.ProjectList button.add-employee {
+  background-color: #0067d6;
+  color: #ffffff;
+  width: 224px;
+  height: 45px;
+  padding: 0 30px;
+  border-radius: 25px;
+  border: #000000;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+}

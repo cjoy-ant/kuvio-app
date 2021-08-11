@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.Nav header {
+  margin: 20px;
+}
+
+.Nav nav {
+  font-family: Montserrat;
+  text-align: center;
+  background: white;
+  margin: 20px 0px 20px 0px;
+}
+
+.Nav .Nav__logo {
+  max-width: 150px;
+  float: left;
+}
+
+/* --- Links --- */
+.Nav a {
+  text-decoration: none;
+  color: #000000;
+  margin: 10px;
+}
+
+/* --- Flexbox --- */
+.Nav .group {
+  display: flex;
+  flex-direction: column;
+}
+
+.Nav .item {
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* --- Tablet --- */
+@media all and (min-width: 600px) {
+  .Nav nav {
+    margin: 20px 20px 10px 0px;
+  }
+
+  .Nav .group {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Nav .item nav {
+    float: right;
+  }
+}
+
+/* --- Desktop --- */
+@media all and (min-width: 1080px) {
+  .Nav .group {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Nav .item nav {
+    float: right;
+  }
+}
+
+/*
+
+color codes: 
+#0036a5 blue
+#ffc80b yellow
+#fce8e1 light pink
+#4A90E2 light blue
+*/

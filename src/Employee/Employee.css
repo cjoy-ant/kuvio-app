@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
+
+.Employee {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+.Employee__edit-btn {
+  background-color: #ffffff;
+  color: #1c1c1c;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 10px 0px 0px 75px;
+  transition: 0.4s ease-in-out;
+}
+
+.Employee__edit-btn:hover {
+  color: #0067d6;
+}
+
+.Employee .bold {
+  font-weight: bold;
+}

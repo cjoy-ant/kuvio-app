@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.EmployeeDirectory {
+  margin: 20px;
+}
+
+.EmployeeDirectory h2 {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.EmployeeDirectory .EmployeeSearch {
+  float: right;
+}
+
+.EmployeeDirectory ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+.EmployeeDirectory li {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.EmployeeDirectory .line-large {
+  border-style: solid;
+  border-width: 1px;
+  width: 150px;
+  margin: 20px;
+}
+
+.EmployeeDirectory .blue {
+  color: #4a90e2;
+}
+
+.EmployeeDirectory a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.EmployeeDirectory button.add-employee {
+  background-color: #0067d6;
+  color: #ffffff;
+  width: 224px;
+  height: 45px;
+  padding: 0 30px;
+  border-radius: 25px;
+  border: #000000;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.EmployeeDirectory .EmployeeSearch__label {
+  background-color: #0067d6;
+  color: #ffffff;
+  width: 165px;
+  height: 45px;
+  padding: 0 30px;
+  border-radius: 25px;
+  border: #000000;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+.EmployeeDirectory .EmployeeSearch__filter {
+  text-align: center;
+}
+
+/* --- Flexbox --- */
+.EmployeeDirectory .group {
+  display: flex;
+  flex-direction: column;
+  min-width: 245px;
+  max-width: 245px;
+}
+
+.EmployeeDirectory .item {
+  flex: 1;
+  justify-content: center;
+}
+
+/* --- Tablet & Desktop --- */
+@media all and (min-width: 600px) {
+  .EmployeeDirectory .group {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .EmployeeDirectory .item {
+    align-self: center;
+  }
+}
