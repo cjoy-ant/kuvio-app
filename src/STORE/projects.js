@@ -9,6 +9,8 @@ const projects = [
       "076a6bc0-fa0c-11eb-9a03-0242ac130003",
       "100e737a-fa0c-11eb-9a03-0242ac130003",
     ],
+    project_complete: false,
+    project_date_modified: "2021-08-10T00:00",
   },
   {
     project_id: "468b5e70-facc-11eb-9a03-0242ac130003",
@@ -21,6 +23,8 @@ const projects = [
       "1eddb3c0-fa0c-11eb-9a03-0242ac130003",
       "2607b45c-fa0c-11eb-9a03-0242ac130003",
     ],
+    project_complete: false,
+    project_date_modified: "2021-08-10T00:00",
   },
   {
     project_id: "6cf67ea0-facc-11eb-9a03-0242ac130003",
@@ -32,6 +36,8 @@ const projects = [
       "100e737a-fa0c-11eb-9a03-0242ac130003",
       "2607b45c-fa0c-11eb-9a03-0242ac130003",
     ],
+    project_complete: false,
+    project_date_modified: "2021-08-10T00:00",
   },
 ];
 
