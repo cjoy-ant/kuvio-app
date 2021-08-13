@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.Home {
+  margin-bottom: 0px;
+}
+
+.Home h1 {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.Home .Home__introduction {
+  background: #4a90e2;
+  color: #ffffff;
+  font-family: "Lora", serif;
+  text-align: center;
+  margin: 20px;
+  padding: 20px 20px 20px 20px;
+  font-size: 0.9em;
+  line-height: 25px;
+}
+
+.Home p.large {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.Home .italic {
+  font-style: italic;
+}
+
+.Home a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Home .Home__img {
+  align-items: center;
+}
+
+.Home .Home__img img {
+  max-width: 100%;
+}
+
+/* --- Tablet & Desktop --- */
+@media all and (min-width: 600px) {
+  .Home {
+    margin: 30px 50px 0px 50px;
+  }
+
+  .Home .Home__introduction {
+    padding: 30px 35px 30px 35px;
+    font-size: 1.2em;
+    line-height: 35px;
+  }
+}

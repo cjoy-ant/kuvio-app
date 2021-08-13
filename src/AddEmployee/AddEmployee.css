@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+.AddEmployee h2 {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: -1px;
+}
+
+.AddEmployee form {
+  background: #ffffff;
+  margin: 20px 10px 20px 10px;
+  padding: 20px;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.AddEmployee input,
+.AddEmployee select {
+  margin: 10px;
+  min-width: 55%;
+  max-width: 55%;
+}
+
+.AddEmployee__button-container {
+  text-align: center;
+}
+
+.AddEmployee__button-submit,
+.AddEmployee__button-cancel {
+  background-color: #0067d6;
+  color: #ffffff;
+  width: 224px;
+  height: 45px;
+  padding: 0 30px;
+  border-radius: 25px;
+  border: #000000;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin: 10px 10px 10px 10px;
+}
+
+/* --- Tablet --- */
+
+/* --- Desktop --- */
+@media all and (min-width: 1080px) {
+  .AddEmployee h2 {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .AddEmployee form {
+    background: #ffffff;
+    margin: 20px 30px 20px 30px;
+    padding: 20px;
+    font-family: "Lora", serif;
+    font-weight: 400;
+  }
+
+  .AddEmployee input,
+  .AddEmployee select {
+    margin: 20px;
+    min-width: 50%;
+    max-width: 50%;
+  }
+
+  .AddEmployee__button-container {
+    text-align: center;
+  }
+
+  .AddEmployee__button-submit,
+  .AddEmployee__button-cancel {
+    background-color: #0067d6;
+    color: #ffffff;
+    width: 224px;
+    height: 45px;
+    padding: 0 30px;
+    border-radius: 25px;
+    border: #000000;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin: 20px 10px 20px 10px;
+  }
+}
