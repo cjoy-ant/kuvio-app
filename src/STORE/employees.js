@@ -6,7 +6,7 @@ const employees = [
     emp_dob: "1992-01-31",
     emp_age: "29",
     emp_country: "608",
-    emp_projects: ["93a80416-facb-11eb-9a03-0242ac130003"],
+    emp_date_modified: "2021-08-10T00:00",
   },
   {
     emp_id: "100e737a-fa0c-11eb-9a03-0242ac130003",
@@ -15,10 +15,7 @@ const employees = [
     emp_dob: "1988-08-09",
     emp_age: "33",
     emp_country: "156",
-    emp_projects: [
-      "93a80416-facb-11eb-9a03-0242ac130003",
-      "6cf67ea0-facc-11eb-9a03-0242ac130003",
-    ],
+    emp_date_modified: "2021-08-10T00:00",
   },
   {
     emp_id: "16aa454c-fa0c-11eb-9a03-0242ac130003",
@@ -27,7 +24,6 @@ const employees = [
     emp_dob: "1975-04-25",
     emp_age: "46",
     emp_country: "826",
-    emp_projects: ["468b5e70-facc-11eb-9a03-0242ac130003"],
     emp_date_modified: "2021-08-10T00:00",
   },
   {
@@ -37,7 +33,6 @@ const employees = [
     emp_dob: "1981-11-04",
     emp_age: "31",
     emp_country: "724",
-    emp_projects: ["468b5e70-facc-11eb-9a03-0242ac130003"],
     emp_date_modified: "2021-08-10T00:00",
   },
   {
@@ -47,7 +42,6 @@ const employees = [
     emp_dob: "1986-10-10",
     emp_age: "34",
     emp_country: "840",
-    emp_projects: ["468b5e70-facc-11eb-9a03-0242ac130003"],
     emp_date_modified: "2021-08-10T00:00",
   },
   {
@@ -57,7 +51,6 @@ const employees = [
     emp_dob: "1993-12-07",
     emp_age: "27",
     emp_country: "840",
-    emp_projects: [],
     emp_date_modified: "2021-08-10T00:00",
   },
 ];
