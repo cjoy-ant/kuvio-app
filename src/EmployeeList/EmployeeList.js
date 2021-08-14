@@ -1,12 +1,14 @@
 import React from "react";
-import employees from "../STORE/employees";
 import Employee from "../Employee/Employee";
+import Context from "../Context";
 import "./EmployeeList.css";
 
 export default class EmployeeList extends React.Component {
+  static contextType = Context;
+
   makeEmployeeList = () => {
     if (this.props.search_filter === "all") {
-      const list = employees.map((i) => {
+      const list = this.context.employees.map((i) => {
         return (
           <li key={i.emp_id}>
             <Employee
@@ -24,7 +26,7 @@ export default class EmployeeList extends React.Component {
       });
       return list;
     } else if (this.props.search_filter === "AZ") {
-      const sorted = employees.sort(function (a, b) {
+      const sorted = this.context.employees.sort(function (a, b) {
         if (a.emp_last_name < b.emp_last_name) {
           return -1;
         }
@@ -51,7 +53,7 @@ export default class EmployeeList extends React.Component {
       });
       return list;
     } else if (this.props.search_filter === "ZA") {
-      const sorted = employees.sort(function (a, b) {
+      const sorted = this.context.employees.sort(function (a, b) {
         if (a.emp_last_name < b.emp_last_name) {
           return 1;
         }
@@ -83,7 +85,7 @@ export default class EmployeeList extends React.Component {
     ) {
       const nameToMatch = this.props.search_query.toLowerCase();
       const matches = [];
-      for (const i of employees) {
+      for (const i of this.context.employees) {
         if (
           i.emp_first_name.includes(nameToMatch) ||
           i.emp_last_name.includes(nameToMatch)
@@ -124,7 +126,9 @@ export default class EmployeeList extends React.Component {
     ) {
       const countryNum = this.props.search_query;
       console.log(countryNum);
-      const matches = employees.filter((i) => i.emp_country === countryNum);
+      const matches = this.context.employees.filter(
+        (i) => i.emp_country === countryNum
+      );
       if (matches.length > 0) {
         const list = matches.map((i) => {
           return (
