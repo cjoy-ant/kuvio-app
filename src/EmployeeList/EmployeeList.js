@@ -1,6 +1,5 @@
 import React from "react";
 import employees from "../STORE/employees";
-import countryListAllIsoData from "../STORE/countryList";
 import Employee from "../Employee/Employee";
 import "./EmployeeList.css";
 

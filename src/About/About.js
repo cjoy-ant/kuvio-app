@@ -44,7 +44,7 @@ export default function About() {
           </div>
         </div>
         <h3>Technology Used</h3>
-        <div class="line-large blue"></div>
+        <div className="line-large blue"></div>
         <div className="group">
           <div className="item">
             <h4>Frontend</h4>

@@ -53,7 +53,7 @@ export default class Project extends React.Component {
         <br />
         <br />
         <span className="bold">Customer Information:</span>
-        <p class="customer_information">
+        <p className="customer_information">
           Name: {getCustomer(project_customer).customer_name}
           <br />
           Phone: {getCustomer(project_customer).customer_phone}

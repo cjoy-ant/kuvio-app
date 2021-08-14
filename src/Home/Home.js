@@ -14,7 +14,7 @@ export default function Home() {
         </p>
         <p>
           Please go to{" "}
-          <span class="italic">
+          <span className="italic">
             <Link to="/about">'About'</Link>
           </span>{" "}
           to learn more.
