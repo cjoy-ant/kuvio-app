@@ -1,61 +1,67 @@
 import React from "react";
 import emp_form from "../STORE/emp_form";
 import countryListAllIsoData from "../STORE/countryList";
-import employees from "../STORE/employees";
+import Context from "../Context";
 import "./EditEmployee.css";
 
 export default class EditEmployee extends React.Component {
   state = {
     emp_id: "",
-    emp_first_name: "",
-    emp_last_name: "",
-    emp_country: "",
-    emp_dob: "",
-    emp_age: "",
+    first_name: "",
+    last_name: "",
+    country: "",
+    dob: "",
+    age: "",
   };
 
-  componentDidMount() {
-    const { id } = this.props.match.params;
+  static contextType = Context;
 
-    const findEmployee = () => {
-      const employee = employees.find((i) => i.emp_id === id);
-      return employee;
+  componentDidMount() {
+    const { emp_id } = this.props.match.params;
+
+    const findEmployee = (emp_id) => {
+      if (emp_id) {
+        const employee = this.context.employees.find(
+          (i) => i.emp_id === emp_id
+        );
+        return employee;
+      }
     };
 
-    const employee = findEmployee();
+    const employee = findEmployee(emp_id);
 
     this.setState({
       emp_id: employee.emp_id,
-      emp_first_name: employee.emp_first_name,
-      emp_last_name: employee.emp_last_name,
-      emp_country: employee.emp_country,
-      emp_dob: employee.emp_dob,
-      emp_age: employee.emp_age,
+      first_name: employee.first_name,
+      last_name: employee.last_name,
+      country: employee.country,
+      dob: employee.dob,
+      age: employee.age,
     });
   }
 
   handleChangeFirstName = (e) => {
     this.setState({
-      emp_first_name: e.target.value.toLowerCase(),
+      first_name: e.target.value.toLowerCase(),
     });
   };
 
   handleChangeLastName = (e) => {
     this.setState({
-      emp_last_name: e.target.value.toLowerCase(),
+      last_name: e.target.value.toLowerCase(),
     });
   };
 
   handleChangeCountry = (e) => {
     this.setState({
-      emp_country: e.target.value,
+      country: e.target.value,
     });
   };
 
   makeCountryList = () => {
     const list = countryListAllIsoData.map((i) => {
       return (
-        <option key={i["number"]} value={i["number"]}>
+        <option key={i["code3"]} value={i["code3"]}>
           {i["name"]}
         </option>
       );
@@ -63,18 +69,19 @@ export default class EditEmployee extends React.Component {
     return list;
   };
 
-  getCountryName = (emp_country) => {
-    const country = countryListAllIsoData.find((i) => i.number === emp_country);
-    if (country) {
+  getCountryName = (countryCode) => {
+    if (countryCode) {
+      const country = countryListAllIsoData.find(
+        (i) => i.code3 === countryCode
+      );
       return country.name;
     }
-    return;
   };
 
   handleChangeDob = (e) => {
     this.setState({
-      emp_dob: e.target.value,
-      emp_age: this.getAge(e.target.value),
+      dob: e.target.value,
+      age: this.getAge(e.target.value),
     });
   };
 
@@ -98,7 +105,7 @@ export default class EditEmployee extends React.Component {
   };
 
   render() {
-    const { emp_first_name, emp_last_name, emp_country, emp_dob } = this.state;
+    const { first_name, last_name, country, dob } = this.state;
 
     return (
       <div className="EditEmployee">
@@ -114,7 +121,7 @@ export default class EditEmployee extends React.Component {
             id={emp_form[0].field}
             type={emp_form[0].type}
             required={emp_form[0].required}
-            defaultValue={emp_first_name}
+            defaultValue={first_name}
             onChange={this.handleChangeFirstName}
           ></input>
           <br />
@@ -129,7 +136,7 @@ export default class EditEmployee extends React.Component {
             id={emp_form[1].field}
             type={emp_form[1].type}
             required={emp_form[1].required}
-            defaultValue={emp_last_name}
+            defaultValue={last_name}
             onChange={this.handleChangeLastName}
           ></input>
           <br />
@@ -143,7 +150,7 @@ export default class EditEmployee extends React.Component {
           <select
             id={emp_form[2].field}
             required={emp_form[2].required}
-            defaultValue={this.getCountryName(emp_country)}
+            defaultValue={country}
             onChange={this.handleChangeCountry}
           >
             <option key="0" value="">
@@ -163,7 +170,7 @@ export default class EditEmployee extends React.Component {
             id={emp_form[3].field}
             type={emp_form[3].type}
             required={emp_form[3].required}
-            defaultValue={emp_dob}
+            defaultValue={dob.substr(0, 10)}
             onChange={this.handleChangeDob}
           ></input>
           <div className="EditEmployee__button-container">

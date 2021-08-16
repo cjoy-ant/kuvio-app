@@ -176,7 +176,7 @@ class App extends React.Component {
             <Route exact path="/about" component={About} />
             <Route path="/employees" component={EmployeeDirectory} />
             <Route exact path="/add-employee" component={AddEmployee} />
-            <Route path="/edit-employee/:id" component={EditEmployee} />
+            <Route path="/edit-employee/:emp_id" component={EditEmployee} />
             <Route path="/projects" component={ProjectList} />
           </div>
           <div className="App__footer">
