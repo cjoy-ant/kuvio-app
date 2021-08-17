@@ -20,6 +20,7 @@
 .Nav a {
   text-decoration: none;
   color: #000000;
+  text-transform: uppercase;
   margin: 10px;
 }
 

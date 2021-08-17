@@ -1,39 +1,43 @@
 import React from "react";
 import emp_form from "../STORE/emp_form";
 import countryListAllIsoData from "../STORE/countryList";
+import Context from "../Context";
+import config from "../config";
 import "./AddEmployee.css";
 
 export default class AddEmployee extends React.Component {
   state = {
-    emp_first_name: "",
-    emp_last_name: "",
-    emp_country: "",
-    emp_dob: "",
-    emp_age: "",
+    first_name: "",
+    last_name: "",
+    country: "",
+    dob: "",
+    age: "",
   };
+
+  static contextType = Context;
 
   handleChangeFirstName = (e) => {
     this.setState({
-      emp_first_name: e.target.value.toLowerCase(),
+      first_name: e.target.value.toLowerCase(),
     });
   };
 
   handleChangeLastName = (e) => {
     this.setState({
-      emp_last_name: e.target.value.toLowerCase(),
+      last_name: e.target.value.toLowerCase(),
     });
   };
 
   handleChangeCountry = (e) => {
     this.setState({
-      emp_country: e.target.value,
+      country: e.target.value,
     });
   };
 
   makeCountryList = () => {
     const list = countryListAllIsoData.map((i) => {
       return (
-        <option key={i["number"]} value={i["number"]}>
+        <option key={i["code3"]} value={i["code3"]}>
           {i["name"]}
         </option>
       );
@@ -43,8 +47,8 @@ export default class AddEmployee extends React.Component {
 
   handleChangeDob = (e) => {
     this.setState({
-      emp_dob: e.target.value,
-      emp_age: this.getAge(e.target.value),
+      dob: e.target.value,
+      age: this.getAge(e.target.value),
     });
   };
 
@@ -61,6 +65,35 @@ export default class AddEmployee extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
+    const newEmployee = {
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      country: this.state.country,
+      dob: this.state.dob,
+      age: this.state.age,
+    };
+
+    fetch(`${config.API_ENDPOINT}/employees`, {
+      method: "POST",
+      body: JSON.stringify(newEmployee),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Something went wrong`);
+        }
+        return res.json();
+      })
+      .then((res) => {
+        this.context.addEmployee(newEmployee);
+        this.props.history.push(`/employees`);
+      })
+      .catch((error) => {
+        this.setState({ error });
+      });
   };
 
   handleCancel = () => {

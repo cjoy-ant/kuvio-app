@@ -8,7 +8,7 @@ export default class EmployeeSearch extends React.Component {
   makeCountryList = () => {
     const list = countryListAllIsoData.map((i) => {
       return (
-        <option key={i["number"]} value={i["number"]}>
+        <option key={i["code3"]} value={i["code3"]}>
           {i["name"]}
         </option>
       );

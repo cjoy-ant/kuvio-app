@@ -1,23 +1,23 @@
 import React from "react";
-import employees from "../STORE/employees";
-import countryListAllIsoData from "../STORE/countryList";
 import Employee from "../Employee/Employee";
+import Context from "../Context";
 import "./EmployeeList.css";
 
 export default class EmployeeList extends React.Component {
+  static contextType = Context;
+
   makeEmployeeList = () => {
     if (this.props.search_filter === "all") {
-      const list = employees.map((i) => {
+      const list = this.context.employees.map((i) => {
         return (
           <li key={i.emp_id}>
             <Employee
               emp_id={i.emp_id}
-              emp_first_name={i.emp_first_name}
-              emp_last_name={i.emp_last_name}
-              emp_country={i.emp_country}
-              emp_age={i.emp_age}
-              emp_dob={i.emp_dob}
-              emp_projects={i.emp_projects}
+              first_name={i.first_name}
+              last_name={i.last_name}
+              country={i.country}
+              age={i.age}
+              dob={i.dob}
             />
             <div className="line-large blue"></div>
           </li>
@@ -25,11 +25,11 @@ export default class EmployeeList extends React.Component {
       });
       return list;
     } else if (this.props.search_filter === "AZ") {
-      const sorted = employees.sort(function (a, b) {
-        if (a.emp_last_name < b.emp_last_name) {
+      const sorted = this.context.employees.sort(function (a, b) {
+        if (a.last_name < b.last_name) {
           return -1;
         }
-        if (a.emp_last_name > b.emp_last_name) {
+        if (a.last_name > b.last_name) {
           return 1;
         }
         return 0;
@@ -39,12 +39,11 @@ export default class EmployeeList extends React.Component {
           <li key={i.emp_id}>
             <Employee
               emp_id={i.emp_id}
-              emp_first_name={i.emp_first_name}
-              emp_last_name={i.emp_last_name}
-              emp_country={i.emp_country}
-              emp_age={i.emp_age}
-              emp_dob={i.emp_dob}
-              emp_projects={i.emp_projects}
+              first_name={i.first_name}
+              last_name={i.last_name}
+              country={i.country}
+              age={i.age}
+              dob={i.dob}
             />
             <div className="line-large blue"></div>
           </li>
@@ -52,11 +51,11 @@ export default class EmployeeList extends React.Component {
       });
       return list;
     } else if (this.props.search_filter === "ZA") {
-      const sorted = employees.sort(function (a, b) {
-        if (a.emp_last_name < b.emp_last_name) {
+      const sorted = this.context.employees.sort(function (a, b) {
+        if (a.last_name < b.last_name) {
           return 1;
         }
-        if (a.emp_last_name > b.emp_last_name) {
+        if (a.last_name > b.last_name) {
           return -1;
         }
         return 0;
@@ -66,12 +65,11 @@ export default class EmployeeList extends React.Component {
           <li key={i.emp_id}>
             <Employee
               emp_id={i.emp_id}
-              emp_first_name={i.emp_first_name}
-              emp_last_name={i.emp_last_name}
-              emp_country={i.emp_country}
-              emp_age={i.emp_age}
-              emp_dob={i.emp_dob}
-              emp_projects={i.emp_projects}
+              first_name={i.first_name}
+              last_name={i.last_name}
+              country={i.country}
+              age={i.age}
+              dob={i.dob}
             />
             <div className="line-large blue"></div>
           </li>
@@ -84,10 +82,10 @@ export default class EmployeeList extends React.Component {
     ) {
       const nameToMatch = this.props.search_query.toLowerCase();
       const matches = [];
-      for (const i of employees) {
+      for (const i of this.context.employees) {
         if (
-          i.emp_first_name.includes(nameToMatch) ||
-          i.emp_last_name.includes(nameToMatch)
+          i.first_name.includes(nameToMatch) ||
+          i.last_name.includes(nameToMatch)
         ) {
           matches.push(i);
         }
@@ -98,12 +96,11 @@ export default class EmployeeList extends React.Component {
             <li key={i.emp_id}>
               <Employee
                 emp_id={i.emp_id}
-                emp_first_name={i.emp_first_name}
-                emp_last_name={i.emp_last_name}
-                emp_country={i.emp_country}
-                emp_age={i.emp_age}
-                emp_dob={i.emp_dob}
-                emp_projects={i.emp_projects}
+                first_name={i.first_name}
+                last_name={i.last_name}
+                country={i.country}
+                age={i.age}
+                dob={i.dob}
               />
               <div className="line-large blue"></div>
             </li>
@@ -125,19 +122,20 @@ export default class EmployeeList extends React.Component {
     ) {
       const countryNum = this.props.search_query;
       console.log(countryNum);
-      const matches = employees.filter((i) => i.emp_country === countryNum);
+      const matches = this.context.employees.filter(
+        (i) => i.country === countryNum
+      );
       if (matches.length > 0) {
         const list = matches.map((i) => {
           return (
             <li key={i.emp_id}>
               <Employee
                 emp_id={i.emp_id}
-                emp_first_name={i.emp_first_name}
-                emp_last_name={i.emp_last_name}
-                emp_country={i.emp_country}
-                emp_age={i.emp_age}
-                emp_dob={i.emp_dob}
-                emp_projects={i.emp_projects}
+                first_name={i.first_name}
+                last_name={i.last_name}
+                country={i.country}
+                age={i.age}
+                dob={i.dob}
               />
               <div className="line-large blue"></div>
             </li>
