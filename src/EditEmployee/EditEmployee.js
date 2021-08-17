@@ -2,6 +2,7 @@ import React from "react";
 import emp_form from "../STORE/emp_form";
 import countryListAllIsoData from "../STORE/countryList";
 import Context from "../Context";
+import config from "../config";
 import "./EditEmployee.css";
 
 export default class EditEmployee extends React.Component {
@@ -18,26 +19,32 @@ export default class EditEmployee extends React.Component {
 
   componentDidMount() {
     const { emp_id } = this.props.match.params;
-
-    const findEmployee = (emp_id) => {
-      if (emp_id) {
-        const employee = this.context.employees.find(
-          (i) => i.emp_id === emp_id
-        );
-        return employee;
-      }
-    };
-
-    const employee = findEmployee(emp_id);
-
-    this.setState({
-      emp_id: employee.emp_id,
-      first_name: employee.first_name,
-      last_name: employee.last_name,
-      country: employee.country,
-      dob: employee.dob,
-      age: employee.age,
-    });
+    fetch(`${config.API_ENDPOINT}/employees/${emp_id}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((error) => Promise.reject(error));
+        }
+        return res.json();
+      })
+      .then((res) => {
+        this.setState({
+          emp_id: res.emp_id,
+          first_name: res.first_name,
+          last_name: res.last_name,
+          country: res.country,
+          dob: res.dob,
+          age: res.age,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ error });
+      });
   }
 
   handleChangeFirstName = (e) => {

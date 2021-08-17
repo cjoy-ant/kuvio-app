@@ -1,20 +1,20 @@
 import React from "react";
-import projects from "../STORE/projects";
 import Project from "../Project/Project";
+import Context from "../Context";
 import "./ProjectList.css";
 
 export default class ProjectList extends React.Component {
+  static contextType = Context;
   makeProjectList = () => {
-    const list = projects.map((i) => {
+    const list = this.context.projects.map((i) => {
       return (
         <li key={i.project_id}>
           <Project
             project_id={i.project_id}
-            project_title={i.project_title}
+            title={i.title}
             project_description={i.project_description}
-            project_customer={i.project_customer}
-            project_deadline={i.project_deadline}
-            project_assigned_employees={i.project_assigned_employees}
+            customer={i.customer}
+            deadline={i.deadline}
           />
           <div className="line-large blue"></div>
         </li>

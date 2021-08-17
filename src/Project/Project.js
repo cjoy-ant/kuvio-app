@@ -1,42 +1,43 @@
 import React from "react";
-import customers from "../STORE/customers";
-import employees from "../STORE/employees";
+import Context from "../Context";
+import { format } from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 import "./Project.css";
 
 export default class Project extends React.Component {
-  render() {
-    const {
-      project_title,
-      project_description,
-      project_customer,
-      project_deadline,
-      project_assigned_employees,
-    } = this.props;
+  static contextType = Context;
 
-    const getCustomer = (project_customer) => {
-      const customer = customers.find(
-        (i) => i.customer_id === project_customer
+  render() {
+    const { project_id, title, project_description, customer, deadline } =
+      this.props;
+
+    const getCustomer = (customer) => {
+      const foundCustomer = this.context.customers.find(
+        (i) => i.customer_id === customer
       );
-      return customer;
+      return foundCustomer;
     };
 
-    const getAssignedEmployees = (project_assigned_employees) => {
-      let assigned_employees = [];
-      for (const i of employees) {
-        if (project_assigned_employees.includes(i.emp_id)) {
-          assigned_employees.push(i);
+    const getAssignedEmployees = (project_id) => {
+      const assignments = this.context.assignments.filter(
+        (i) => i.project === project_id
+      );
+      const employeeIds = assignments.map((i) => i.employee);
+      const assignedEmployees = [];
+      for (const i of this.context.employees) {
+        if (employeeIds.includes(i.emp_id)) {
+          assignedEmployees.push(i);
         }
       }
-
-      const list = assigned_employees.map((i) => {
+      const list = assignedEmployees.map((i) => {
         const capitalizeFirstLetter = (string) => {
           return string.charAt(0).toUpperCase() + string.slice(1);
         };
 
         return (
           <li key={i.emp_id}>
-            {capitalizeFirstLetter(i.emp_first_name)}{" "}
-            {capitalizeFirstLetter(i.emp_last_name)}
+            {capitalizeFirstLetter(i.first_name)}{" "}
+            {capitalizeFirstLetter(i.last_name)}
           </li>
         );
       });
@@ -46,7 +47,7 @@ export default class Project extends React.Component {
     return (
       <div className="Project">
         <span className="bold">Title: </span>
-        {project_title}
+        {title}
         <br />
         <span className="bold">Description: </span>
         {project_description}
@@ -54,17 +55,18 @@ export default class Project extends React.Component {
         <br />
         <span className="bold">Customer Information:</span>
         <p className="customer_information">
-          Name: {getCustomer(project_customer).customer_name}
+          Name: {getCustomer(customer).customer_name}
           <br />
-          Phone: {getCustomer(project_customer).customer_phone}
+          Phone: {getCustomer(customer).phone}
           <br />
-          Email: {getCustomer(project_customer).customer_email}
+          Email: {getCustomer(customer).email}
         </p>
         <br />
-        <span className="bold">Deadline: </span> {project_deadline}
+        <span className="bold">Deadline: </span>{" "}
+        {format(utcToZonedTime(deadline), "MMMM d, yyyy")}
         <br />
         <span className="bold">Assigned Employees: </span>
-        <ul>{getAssignedEmployees(project_assigned_employees)}</ul>
+        <ul>{getAssignedEmployees(project_id)}</ul>
       </div>
     );
   }
