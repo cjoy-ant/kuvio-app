@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+.About {
+  max-width: 100%;
+}
+
 .About .About__main {
   margin: 20px;
 }
@@ -63,24 +67,27 @@
 }
 
 /* --- Images --- */
+.About .item .img-container {
+  padding: 0px;
+  max-width: 100%;
+}
+
 .About .item img {
   max-width: 300px;
-}
-
-.About .img-container {
-  padding: 0px;
-  margin: 0px;
-  max-width: 100%;
-}
-
-.About .img-container img {
-  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 /* --- Flexbox --- */
-.About .group {
+.About .group.empDirectory,
+.About .group.technology {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.About .group.projects {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .About .item {
@@ -100,7 +107,9 @@
   }
 
   /* --- Flexbox --- */
-  .About .group {
+  .About .group.empDirectory,
+  .About .group.projects,
+  .About .group.technology {
     flex-direction: row;
     justify-content: center;
     align-items: center;

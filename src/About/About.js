@@ -11,7 +11,7 @@ export default function About() {
         <h2>About</h2>
         <h3>Features</h3>
         <div className="line-large blue"></div>
-        <div className="group">
+        <div className="group empDirectory">
           <div className="item">
             <h4>Employee Directory</h4>
             <ul>
@@ -29,7 +29,7 @@ export default function About() {
             <img src={kiwi} alt="golden kiwi" />
           </div>
         </div>
-        <div className="group">
+        <div className="group projects">
           <div className="item">
             <img src={thread} alt="spools of thread" />
           </div>
@@ -43,9 +43,9 @@ export default function About() {
             </ul>
           </div>
         </div>
-        <h3>Technology Used</h3>
+        <h3>Technology</h3>
         <div className="line-large blue"></div>
-        <div className="group">
+        <div className="group technology">
           <div className="item">
             <h4>Frontend</h4>
             <ul>
@@ -65,9 +65,6 @@ export default function About() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="img-container">
-        <img src={plantleaves} alt="large leaves" />
       </div>
     </div>
   );
