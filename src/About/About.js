@@ -1,19 +1,18 @@
 import React from "react";
 import kiwi from "../STORE/images/unsplash-goldenkiwi.jpg";
 import thread from "../STORE/images/unsplash-thread.jpg";
-import plantleaves from "../STORE/images/unsplash-bigleaves.jpg";
 import "./About.css";
 
 export default function About() {
   return (
     <div className="About">
       <div className="About__main">
-        <h2>About</h2>
-        <h3>Features</h3>
+        <h1>About</h1>
+        <h2>Features</h2>
         <div className="line-large blue"></div>
         <div className="group empDirectory">
           <div className="item">
-            <h4>Employee Directory</h4>
+            <h3>Employee Directory</h3>
             <ul>
               <li>View list of employees</li>
               <li>Search for employees (alphabetically, by country)</li>
@@ -34,7 +33,7 @@ export default function About() {
             <img src={thread} alt="spools of thread" />
           </div>
           <div className="item">
-            <h4>List of Projects</h4>
+            <h3>List of Projects</h3>
             <ul>
               <li>Title</li>
               <li>Description</li>
@@ -43,11 +42,11 @@ export default function About() {
             </ul>
           </div>
         </div>
-        <h3>Technology</h3>
+        <h2>Technology</h2>
         <div className="line-large blue"></div>
         <div className="group technology">
           <div className="item">
-            <h4>Frontend</h4>
+            <h3>Frontend</h3>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -56,7 +55,7 @@ export default function About() {
             </ul>
           </div>
           <div className="item">
-            <h4>Backend</h4>
+            <h3>Backend</h3>
             <ul>
               <li>NodeJS</li>
               <li>Express</li>

@@ -2,29 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .Home {
-  margin-bottom: 0px;
+  margin: 20px;
 }
 
-.Home h1 {
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-.Home .Home__introduction {
+.Home .Home__main {
   background: #4a90e2;
   color: #ffffff;
   font-family: "Lora", serif;
   text-align: center;
-  margin: 20px;
   padding: 20px 20px 20px 20px;
-  font-size: 0.9em;
   line-height: 25px;
 }
 
 .Home p.large {
-  font-size: 1.2em;
   margin-bottom: 30px;
 }
 
@@ -43,18 +33,39 @@
 }
 
 .Home .Home__img img {
-  max-width: 100%;
+  min-width: 90%;
+  max-width: 90%;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 30px;
 }
 
-/* --- Tablet & Desktop --- */
+/* --- Tablet --- */
 @media all and (min-width: 600px) {
-  .Home {
+  .Home .Home__main {
     margin: 30px 50px 0px 50px;
+    padding: 30px 35px 30px 35px;
+    line-height: 35px;
   }
 
-  .Home .Home__introduction {
-    padding: 30px 35px 30px 35px;
-    font-size: 1.2em;
-    line-height: 35px;
+  .Home .Home__img img {
+    min-width: 95%;
+    max-width: 95%;
+  }
+}
+
+/* --- Desktop --- */
+@media all and (min-width: 1080) {
+  .Home .Home__main {
+    margin: 30px 100px 0px 100px;
+  }
+
+  .Home .Home__img img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .Home .Home__main p.large {
+    font-size: 2em;
   }
 }

@@ -48,6 +48,7 @@ export default class EmployeeDirectory extends React.Component {
   handleChangeSearchQuery = (query) => {
     this.setState({
       search_query: query,
+      show_results: false,
     });
   };
 
@@ -58,23 +59,17 @@ export default class EmployeeDirectory extends React.Component {
   render() {
     return (
       <div className="EmployeeDirectory">
-        <h2>Employees</h2>
-        <div className="group">
-          <div className="item">
-            <div className="EmployeeDirectory__button-container">
-              <button className="add-employee" type="button">
-                <Link to="/add-employee">Add an Employee</Link>
-              </button>
-            </div>
-            <div className="item">
-              <EmployeeSearch
-                search_filter={this.state.search_filter}
-                handleChangeSearchFilter={this.handleChangeSearchFilter}
-                handleChangeSearchQuery={this.handleChangeSearchQuery}
-                handleSearch={this.handleSearch}
-              />
-            </div>
-          </div>
+        <h1>Employees</h1>
+        <div className="EmployeeDirectory__button-container">
+          <button className="add-employee" type="button">
+            <Link to="/add-employee">Add an Employee</Link>
+          </button>
+          <EmployeeSearch
+            search_filter={this.state.search_filter}
+            handleChangeSearchFilter={this.handleChangeSearchFilter}
+            handleChangeSearchQuery={this.handleChangeSearchQuery}
+            handleSearch={this.handleSearch}
+          />
         </div>
         <EmployeeList
           search_filter={this.state.search_filter}

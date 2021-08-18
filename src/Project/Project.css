@@ -1,30 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
 
-.Project {
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-size: 0.9em;
-  letter-spacing: 0.5px;
-}
-
-.Project .customer_information {
+.Project .customer-information {
   margin: 0px 0px 0px 20px;
 }
 
-.Project__edit-btn {
-  background-color: #ffffff;
-  color: #1c1c1c;
-  border: 0;
-  font-size: 24px;
-  cursor: pointer;
-  margin: 10px 0px 0px 75px;
-  transition: 0.4s ease-in-out;
-}
-
-.Project__edit-btn:hover {
-  color: #0067d6;
+.Project {
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
 }
 
 .Project .bold {
   font-weight: bold;
+}
+
+.Project .employee-names {
+  font-size: 1.1em;
+}
+
+.Project .customer-information {
+  font-size: 1em;
+}
+
+.Project .title {
+  font-size: 1.2em;
+}
+
+/* --- TABLET --- */
+@media all and (min-width: 600px) {
+  .Project .employee-names {
+    font-size: 1em;
+  }
+}
+/* --- DESKTOP --- */
+@media all and (min-width: 1080px) {
+  .Project .employee-names {
+    font-size: 0.9em;
+  }
 }

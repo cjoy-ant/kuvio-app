@@ -47,11 +47,13 @@ export default class Employee extends React.Component {
           <span className="bold">Age:</span> {age}
         </span>
         <br />
-        <Link to={`edit-employee/${emp_id}`}>
-          <button className="Employee__edit-btn" type="button">
-            <FontAwesomeIcon icon={faUserEdit} alt="edit employee" />
-          </button>
-        </Link>
+        <div className="Employee__button-container">
+          <Link to={`edit-employee/${emp_id}`}>
+            <button className="Employee__edit-btn" type="button">
+              <FontAwesomeIcon icon={faUserEdit} alt="edit employee" />
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }

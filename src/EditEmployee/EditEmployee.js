@@ -103,8 +103,38 @@ export default class EditEmployee extends React.Component {
     return age;
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = () => {
+    const { emp_id } = this.props.match.params;
+
+    const updatedEmployee = {
+      emp_id: this.state.emp_id,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      country: this.state.country,
+      dob: this.state.dob,
+      age: this.state.age,
+    };
+
+    fetch(`${config.API_ENDPOINT}/employees/${emp_id}`, {
+      method: "PATCH",
+      body: JSON.stringify(updatedEmployee),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((error) => Promise.reject(error));
+        }
+      })
+      .then((res) => {
+        this.context.editEmployee(updatedEmployee);
+        this.props.history.push(`/employees`);
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ error });
+      });
   };
 
   handleCancel = () => {
@@ -116,70 +146,72 @@ export default class EditEmployee extends React.Component {
 
     return (
       <div className="EditEmployee">
-        <h2>Edit Employee Information</h2>
+        <h1>Edit Employee Information</h1>
         <form name="EditEmployee__form" onSubmit={this.handleSubmit}>
-          <label
-            htmlFor={emp_form[0].field}
-            aria-label={emp_form[0].display_name}
-          >
-            {emp_form[0].display_name}
-          </label>
-          <input
-            id={emp_form[0].field}
-            type={emp_form[0].type}
-            required={emp_form[0].required}
-            defaultValue={first_name}
-            onChange={this.handleChangeFirstName}
-          ></input>
-          <br />
+          <div className="form__main">
+            <label
+              htmlFor={emp_form[0].field}
+              aria-label={emp_form[0].display_name}
+            >
+              {emp_form[0].display_name}
+            </label>
+            <input
+              id={emp_form[0].field}
+              type={emp_form[0].type}
+              required={emp_form[0].required}
+              defaultValue={first_name}
+              onChange={this.handleChangeFirstName}
+            ></input>
+            <br />
 
-          <label
-            htmlFor={emp_form[1].field}
-            aria-label={emp_form[1].display_name}
-          >
-            {emp_form[1].display_name}
-          </label>
-          <input
-            id={emp_form[1].field}
-            type={emp_form[1].type}
-            required={emp_form[1].required}
-            defaultValue={last_name}
-            onChange={this.handleChangeLastName}
-          ></input>
-          <br />
+            <label
+              htmlFor={emp_form[1].field}
+              aria-label={emp_form[1].display_name}
+            >
+              {emp_form[1].display_name}
+            </label>
+            <input
+              id={emp_form[1].field}
+              type={emp_form[1].type}
+              required={emp_form[1].required}
+              defaultValue={last_name}
+              onChange={this.handleChangeLastName}
+            ></input>
+            <br />
 
-          <label
-            htmlFor={emp_form[2].field}
-            aria-label={emp_form[2].display_name}
-          >
-            {emp_form[2].display_name}
-          </label>
-          <select
-            id={emp_form[2].field}
-            required={emp_form[2].required}
-            defaultValue={country}
-            onChange={this.handleChangeCountry}
-          >
-            <option key="0" value="">
-              Select a Country
-            </option>
-            {this.makeCountryList()}
-          </select>
-          <br />
+            <label
+              htmlFor={emp_form[2].field}
+              aria-label={emp_form[2].display_name}
+            >
+              {emp_form[2].display_name}
+            </label>
+            <select
+              id={emp_form[2].field}
+              required={emp_form[2].required}
+              defaultValue={country}
+              onChange={this.handleChangeCountry}
+            >
+              <option key="0" value="">
+                Select a Country
+              </option>
+              {this.makeCountryList()}
+            </select>
+            <br />
 
-          <label
-            htmlFor={emp_form[3].field}
-            aria-label={emp_form[3].display_name}
-          >
-            {emp_form[3].display_name}
-          </label>
-          <input
-            id={emp_form[3].field}
-            type={emp_form[3].type}
-            required={emp_form[3].required}
-            defaultValue={dob.substr(0, 10)}
-            onChange={this.handleChangeDob}
-          ></input>
+            <label
+              htmlFor={emp_form[3].field}
+              aria-label={emp_form[3].display_name}
+            >
+              {emp_form[3].display_name}
+            </label>
+            <input
+              id={emp_form[3].field}
+              type={emp_form[3].type}
+              required={emp_form[3].required}
+              defaultValue={dob.substr(0, 10)}
+              onChange={this.handleChangeDob}
+            ></input>
+          </div>
           <div className="EditEmployee__button-container">
             <button type="submit" className="EditEmployee__button-submit">
               Save

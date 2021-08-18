@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="Home">
       <h1>Welcome!</h1>
-      <section className="Home__introduction">
+      <div className="Home__main">
         <p className="large">
           This is a sample project for Kuvio Creative's JR Web Developer
           Apprenticeship.
@@ -19,7 +19,7 @@ export default function Home() {
           </span>{" "}
           to learn more.
         </p>
-      </section>
+      </div>
       <div className="Home__img">
         <img src={markers} alt="markers" />
       </div>

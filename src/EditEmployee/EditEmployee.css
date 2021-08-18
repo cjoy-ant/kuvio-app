@@ -1,32 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
-.EditEmployee h2 {
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 2em;
-  letter-spacing: -1px;
+.EditEmployee {
+  margin: 20px;
+}
+.EditEmployee form .form__main {
+  background: rgba(115, 222, 255, 0.2);
+  padding: 20px;
 }
 
-.EditEmployee form {
-  background: #ffffff;
-  margin: 20px 10px 20px 10px;
-  padding: 20px;
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-size: 0.9em;
+.EditEmployee label {
+  font-weight: bold;
 }
 
 .EditEmployee input,
 .EditEmployee select {
   margin: 10px;
-  min-width: 55%;
-  max-width: 55%;
+  min-width: 60%;
+  max-width: 60%;
 }
 
 .EditEmployee__button-container {
   text-align: center;
+}
+
+.EditEmployee__button-container {
+  margin-top: 20px;
 }
 
 .EditEmployee__button-submit,
@@ -44,54 +43,43 @@
   font-weight: bold;
   font-size: 0.9em;
   cursor: pointer;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 10px 10px 5px;
 }
 
 /* --- Tablet --- */
-
-/* --- Desktop --- */
-@media all and (min-width: 1080px) {
-  .EditEmployee h2 {
-    text-align: center;
-    font-family: Montserrat;
-    font-weight: 600;
-    letter-spacing: -1px;
+@media all and (min-width: 600px) {
+  .EditEmployee {
+    margin: 20px 50px 20px 50px;
   }
 
-  .EditEmployee form {
-    background: #ffffff;
-    margin: 20px 30px 20px 30px;
-    padding: 20px;
-    font-family: "Lora", serif;
-    font-weight: 400;
-  }
-
-  .EditEmployee input,
-  .EditEmployee select {
-    margin: 20px;
-    min-width: 50%;
-    max-width: 50%;
+  .EditEmployee form .form__main {
+    padding: 30px;
   }
 
   .EditEmployee__button-container {
-    text-align: center;
+    margin-top: 10px;
   }
 
   .EditEmployee__button-submit,
   .EditEmployee__button-cancel {
-    background-color: #0067d6;
-    color: #ffffff;
-    width: 224px;
-    height: 45px;
-    padding: 0 30px;
-    border-radius: 25px;
-    border: #000000;
-    font-family: sans-serif;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
-    font-size: 0.9em;
-    cursor: pointer;
-    margin: 20px 10px 20px 10px;
+    margin: 20px 10px 10px 10px;
+  }
+}
+
+/* --- Desktop --- */
+@media all and (min-width: 1080px) {
+  .EditEmployee {
+    margin: 20px 100px 20px 100px;
+  }
+
+  .EditEmployee form .form__main {
+    padding: 40px;
+  }
+
+  .EditEmployee input,
+  .EditEmployee select {
+    margin: 10px;
+    min-width: 500px;
+    max-width: 500px;
   }
 }
