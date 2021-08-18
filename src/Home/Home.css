@@ -58,6 +58,7 @@
 @media all and (min-width: 1080) {
   .Home .Home__main {
     margin: 30px 100px 0px 100px;
+    padding: 30px 35px 40px 35px;
   }
 
   .Home .Home__img img {
