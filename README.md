@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Kuvio Sample Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the App
 
-## Available Scripts
+![Home Page](src/STORE/images/app-screenshots/home.png)
 
-In the project directory, you can run:
+This app is a sample project for the Kuvio Creative JR Developer Apprenticeship.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Employee Directory
 
-### `npm test`
+- Displays a list of employees
+- Search for employees (alphabetically, by name, by country)
+- Add new employees
+- Edit current employee information
+- Database stores employee information, including Employee id, First name, Last name, Country, Date of birth, and Age
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Employee Directory](src/STORE/images/app-screenshots/employee-directory.png)
 
-### `npm run build`
+### Projects
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Displays a list of projects including Title, Description, Customer information, Deadline, and Assigned Employees
+- Database stores information for customers, projects, and project assignments in respective tables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Projects](src/STORE/images/app-screenshots/project-list.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## [API Documentation](https://kuvio-api.herokuapp.com/api)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Endpoints
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### /employees
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- GET: returns all employees
+- POST: add an employee
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### /employees/:emp_id
 
-## Learn More
+- GET: return a specified employee
+- PATCH: update information for a specified employee
+- DELETE: delete a specified employee
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### /customers
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- GET: returns all customers
+- POST: add a customer
 
-### Code Splitting
+#### /customers/:customer_id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GET: return a specified customer
+- PATCH: update information for a specified customer
+- DELETE: delete a specified customer
 
-### Analyzing the Bundle Size
+#### /projects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GET: returns all projects
+- POST: add a project
 
-### Making a Progressive Web App
+#### /projects/:project_id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GET: return a specified project
+- PATCH: update information for a specified project
+- DELETE: delete a specified project
 
-### Advanced Configuration
+#### /assignments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- GET: returns all project assignments
+- POST: add a project assignment
 
-### Deployment
+#### /assignments/:assignment_id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- GET: return a specified project assignment
+- PATCH: update information for a specified project assignment
+- DELETE: delete a specified project assignment
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technology
+
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+- NodeJS
+- Express
+- PostgreSQL
+- Vercel
+- Heroku
+
+---
+
+### Pending Features
+
+ADD / EDIT / DELETE customers, projects, and project assignments
+
+The API has been developed to respond to these endpoints, but features have not yet been implemented on the client-side.

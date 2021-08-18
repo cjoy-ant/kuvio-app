@@ -20,7 +20,7 @@ export default function About() {
               <li>Edit current employee information</li>
               <li>
                 Employee information includes: first name, last name, country,
-                date of birth, age, and assigned projects
+                date of birth, and age
               </li>
             </ul>
           </div>
