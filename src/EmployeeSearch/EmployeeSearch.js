@@ -60,7 +60,9 @@ export default class EmployeeSearch extends React.Component {
   render() {
     return (
       <div className="EmployeeSearch">
-        <div className="EmployeeSearch__label">Search</div>
+        <div className="EmployeeSearch__label">
+          <p>Search</p>
+        </div>
         <div className="EmployeeSearch__filter">
           <select onChange={this.handleChangeSearchFilter}>
             <option value="search_show_all">Show All</option>

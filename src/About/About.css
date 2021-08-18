@@ -1,49 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+.About {
+  max-width: 100%;
+}
+
 .About .About__main {
   margin: 20px;
 }
 
 /* --- Text --- */
-
-.About h2 {
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 2em;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-
-.About h3 {
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 2em;
-  letter-spacing: -1px;
-  margin-top: 30px;
-}
-
-.About h4 {
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 1.4em;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.About p {
-  font-family: Montserrat;
-  font-weight: 600;
-}
-
 .About li {
   font-family: "Lora", serif;
   font-weight: 400;
   font-size: 0.9em;
   letter-spacing: 0.5px;
-  margin-left: 20px;
 }
 
 .About .bold {
@@ -63,24 +34,27 @@
 }
 
 /* --- Images --- */
+.About .item .img-container {
+  padding: 0px;
+  max-width: 100%;
+}
+
 .About .item img {
   max-width: 300px;
-}
-
-.About .img-container {
-  padding: 0px;
-  margin: 0px;
-  max-width: 100%;
-}
-
-.About .img-container img {
-  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 /* --- Flexbox --- */
-.About .group {
+.About .group.empDirectory,
+.About .group.technology {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.About .group.projects {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .About .item {
@@ -89,18 +63,20 @@
   justify-content: center;
 }
 
-/* --- Tablet & Desktop --- */
+/* --- Tablet --- */
 @media all and (min-width: 600px) {
   .About .About__main {
     margin: 50px 20px 20px 20px;
   }
 
-  .About p {
-    font-size: 1.4em;
+  .About li {
+    margin-left: 20px;
   }
 
   /* --- Flexbox --- */
-  .About .group {
+  .About .group.empDirectory,
+  .About .group.projects,
+  .About .group.technology {
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -108,5 +84,13 @@
 
   .About .item {
     float: right;
+  }
+}
+
+/* --- Desktop  --- */
+@media all and (min-width: 1080px) {
+  .About .About__main {
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }

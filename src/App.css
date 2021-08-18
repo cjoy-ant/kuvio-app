@@ -4,6 +4,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.App__main {
+  padding-bottom: 50px;
+}
+
 footer {
   background-color: #1c1c1c;
   color: #ffffff;
@@ -12,6 +21,87 @@ footer {
   font-size: 0.8em;
   letter-spacing: 0.75px;
   width: 100%;
-  padding: 10px;
-  margin-top: 0px;
+  padding-top: 10px;
+  height: 25px;
+  position: fixed;
+  bottom: 0;
+}
+
+/* --- TEXT --- */
+
+.App h1 {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.App h2 {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.4em;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.App h3 {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.App p,
+.App ul,
+.App li,
+.App form,
+.App input,
+.App select {
+  font-family: "Lora", serif;
+  font-size: 0.9em;
+}
+
+.App button {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+/* --- Tablet --- */
+@media all and (min-width: 600px) {
+  .App h3 {
+    font-size: 1.2em;
+  }
+
+  .App p,
+  .App ul,
+  .App li,
+  .App select,
+  .App button {
+    font-size: 1em;
+  }
+}
+
+/* --- Desktop --- */
+@media all and (min-width: 1080px) {
+  .App h1 {
+    font-size: 2.5em;
+  }
+
+  .App h2 {
+    font-size: 1.7em;
+  }
+
+  .App h3 {
+    font-size: 1.4em;
+  }
+
+  .App p,
+  .App ul,
+  .App li,
+  .App select,
+  .App button {
+    font-size: 1.1em;
+  }
 }

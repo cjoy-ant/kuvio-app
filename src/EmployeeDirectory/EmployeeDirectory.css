@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 .EmployeeDirectory {
   margin: 20px;
@@ -7,41 +8,14 @@
 .EmployeeDirectory h2 {
   text-align: center;
   font-family: Montserrat;
-  font-size: 2em;
   font-weight: 600;
   font-size: 2em;
   letter-spacing: -1px;
   text-transform: uppercase;
 }
 
-.EmployeeDirectory .EmployeeSearch {
-  float: right;
-}
-
-.EmployeeDirectory ul {
-  padding: 0px;
-  list-style-type: none;
-}
-
-.EmployeeDirectory li {
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-.EmployeeDirectory .line-large {
-  border-style: solid;
-  border-width: 1px;
-  width: 150px;
-  margin: 20px;
-}
-
-.EmployeeDirectory .blue {
-  color: #4a90e2;
-}
-
-.EmployeeDirectory a {
-  text-decoration: none;
-  color: #ffffff;
+.EmployeeDirectory select {
+  font-family: "Lora", serif;
 }
 
 .EmployeeDirectory button.add-employee {
@@ -74,35 +48,57 @@
   vertical-align: middle;
   font-weight: bold;
   font-size: 0.9em;
-  margin-top: 20px;
+  margin: 20px 0px 10px 20px;
+}
+
+.EmployeeDirectory .EmployeeSearch__label p {
+  font-family: sans-serif;
+  font-size: 1em;
+  letter-spacing: 0px;
+  padding-top: 15px;
 }
 
 .EmployeeDirectory .EmployeeSearch__filter {
-  text-align: center;
+  margin: 10px 0px 20px 20px;
 }
 
-/* --- Flexbox --- */
-.EmployeeDirectory .group {
-  display: flex;
-  flex-direction: column;
-  min-width: 245px;
-  max-width: 245px;
+.EmployeeDirectory .EmployeeSearch__filter select {
+  min-width: 60%;
+  max-width: 60%;
 }
 
-.EmployeeDirectory .item {
-  flex: 1;
-  justify-content: center;
+.EmployeeDirectory ul {
+  padding: 0px;
+  list-style-type: none;
 }
 
-/* --- Tablet & Desktop --- */
+.EmployeeDirectory li {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.EmployeeDirectory .line-large {
+  border-style: solid;
+  border-width: 1px;
+  width: 150px;
+  margin: 20px;
+}
+
+.EmployeeDirectory .blue {
+  color: #4a90e2;
+}
+
+.EmployeeDirectory a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* --- Tablet --- */
 @media all and (min-width: 600px) {
-  .EmployeeDirectory .group {
-    flex-direction: row;
-    justify-content: center;
-    max-width: 100%;
-  }
-
-  .EmployeeDirectory .item {
-    align-self: center;
+  .EmployeeDirectory .line-large {
+    border-style: solid;
+    border-width: 1px;
+    width: 300px;
+    margin: 20px;
   }
 }

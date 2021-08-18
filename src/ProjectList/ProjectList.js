@@ -26,8 +26,8 @@ export default class ProjectList extends React.Component {
   render() {
     return (
       <div className="ProjectList">
-        <h2>Projects</h2>
-        <ul>{this.makeProjectList()}</ul>
+        <h1>Projects</h1>
+        <ul className="ProjectList__main">{this.makeProjectList()}</ul>
       </div>
     );
   }

@@ -46,27 +46,31 @@ export default class Project extends React.Component {
 
     return (
       <div className="Project">
-        <span className="bold">Title: </span>
-        {title}
-        <br />
-        <span className="bold">Description: </span>
-        {project_description}
-        <br />
-        <br />
-        <span className="bold">Customer Information:</span>
-        <p className="customer_information">
-          Name: {getCustomer(customer).customer_name}
+        <p>
+          <span class="title">
+            <span className="bold">Title: </span>
+            {title}
+          </span>
           <br />
-          Phone: {getCustomer(customer).phone}
+          <span className="bold">Description: </span>
+          {project_description}
           <br />
-          Email: {getCustomer(customer).email}
+          <br />
+          <span className="bold">Customer Information:</span>
+          <p className="customer-information">
+            Name: {getCustomer(customer).customer_name}
+            <br />
+            Phone: {getCustomer(customer).phone}
+            <br />
+            Email: {getCustomer(customer).email}
+          </p>
+          <br />
+          <span className="bold">Deadline: </span>{" "}
+          {format(utcToZonedTime(deadline), "MMMM d, yyyy")}
+          <br />
+          <span className="bold">Assigned Employees: </span>
+          <ul className="employee-names">{getAssignedEmployees(project_id)}</ul>
         </p>
-        <br />
-        <span className="bold">Deadline: </span>{" "}
-        {format(utcToZonedTime(deadline), "MMMM d, yyyy")}
-        <br />
-        <span className="bold">Assigned Employees: </span>
-        <ul>{getAssignedEmployees(project_id)}</ul>
       </div>
     );
   }

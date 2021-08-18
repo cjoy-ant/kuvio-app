@@ -103,66 +103,68 @@ export default class AddEmployee extends React.Component {
   render() {
     return (
       <div className="AddEmployee">
-        <h2>Add New Employee</h2>
+        <h1>Add New Employee</h1>
         <form name="AddEmployee__form" onSubmit={this.handleSubmit}>
-          <label
-            htmlFor={emp_form[0].field}
-            aria-label={emp_form[0].display_name}
-          >
-            {emp_form[0].display_name}
-          </label>
-          <input
-            id={emp_form[0].field}
-            type={emp_form[0].type}
-            required={emp_form[0].required}
-            onChange={this.handleChangeFirstName}
-          ></input>
-          <br />
+          <div className="form__main">
+            <label
+              htmlFor={emp_form[0].field}
+              aria-label={emp_form[0].display_name}
+            >
+              {emp_form[0].display_name}
+            </label>
+            <input
+              id={emp_form[0].field}
+              type={emp_form[0].type}
+              required={emp_form[0].required}
+              onChange={this.handleChangeFirstName}
+            ></input>
+            <br />
 
-          <label
-            htmlFor={emp_form[1].field}
-            aria-label={emp_form[1].display_name}
-          >
-            {emp_form[1].display_name}
-          </label>
-          <input
-            id={emp_form[1].field}
-            type={emp_form[1].type}
-            required={emp_form[1].required}
-            onChange={this.handleChangeLastName}
-          ></input>
-          <br />
+            <label
+              htmlFor={emp_form[1].field}
+              aria-label={emp_form[1].display_name}
+            >
+              {emp_form[1].display_name}
+            </label>
+            <input
+              id={emp_form[1].field}
+              type={emp_form[1].type}
+              required={emp_form[1].required}
+              onChange={this.handleChangeLastName}
+            ></input>
+            <br />
 
-          <label
-            htmlFor={emp_form[2].field}
-            aria-label={emp_form[2].display_name}
-          >
-            {emp_form[2].display_name}
-          </label>
-          <select
-            id={emp_form[2].field}
-            required={emp_form[2].required}
-            onChange={this.handleChangeCountry}
-          >
-            <option key="0" value="">
-              Select a Country
-            </option>
-            {this.makeCountryList()}
-          </select>
-          <br />
+            <label
+              htmlFor={emp_form[2].field}
+              aria-label={emp_form[2].display_name}
+            >
+              {emp_form[2].display_name}
+            </label>
+            <select
+              id={emp_form[2].field}
+              required={emp_form[2].required}
+              onChange={this.handleChangeCountry}
+            >
+              <option key="0" value="">
+                Select a Country
+              </option>
+              {this.makeCountryList()}
+            </select>
+            <br />
 
-          <label
-            htmlFor={emp_form[3].field}
-            aria-label={emp_form[3].display_name}
-          >
-            {emp_form[3].display_name}
-          </label>
-          <input
-            id={emp_form[3].field}
-            type={emp_form[3].type}
-            required={emp_form[3].required}
-            onChange={this.handleChangeDob}
-          ></input>
+            <label
+              htmlFor={emp_form[3].field}
+              aria-label={emp_form[3].display_name}
+            >
+              {emp_form[3].display_name}
+            </label>
+            <input
+              id={emp_form[3].field}
+              type={emp_form[3].type}
+              required={emp_form[3].required}
+              onChange={this.handleChangeDob}
+            ></input>
+          </div>
           <div className="AddEmployee__button-container">
             <button type="submit" className="AddEmployee__button-submit">
               Save
