@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
 
-.Project .customer-information {
-  margin: 0px 0px 0px 20px;
-}
-
 .Project {
   font-size: 1.1em;
   letter-spacing: 0.5px;
@@ -13,12 +9,14 @@
   font-weight: bold;
 }
 
-.Project .employee-names {
-  font-size: 1.1em;
+.Project .customer-information {
+  margin: 0px 0px 0px 20px;
+  font-size: 1em;
 }
 
-.Project .customer-information {
-  font-size: 1em;
+.Project .employee-names {
+  margin-left: 20px;
+  font-size: 1.1em;
 }
 
 .Project .title {
