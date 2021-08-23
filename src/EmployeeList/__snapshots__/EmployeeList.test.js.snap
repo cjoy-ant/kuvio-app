@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmployeeList /> renders <EmployeeList /> by default 1`] = `
+<div
+  className="EmployeeList"
+>
+  <ul />
+</div>
+`;
